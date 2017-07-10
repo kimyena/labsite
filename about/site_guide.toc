@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Website file structure}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Adding a new page to the website}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Adding a new entry to the navigation bar}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}Adding and updating website content}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Adding a publication}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Adding a lab member}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Adding a news item}{5}{subsection.2.3}
+\contentsline {section}{\numberline {3}Publishing content to web}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Accesing the site directory}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Guidelines for uploading content}{5}{subsection.3.2}

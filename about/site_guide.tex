@@ -1,0 +1,223 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+\author{Natalia V\'elez}
+\title{Guide to maintaining and updating the lab website}
+\date{September 11, 2014}
+
+\lstset{language=HTML,
+basicstyle=\ttfamily,
+keywordstyle=\bfseries,
+frame=tb,
+breaklines=true}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Website file structure}
+Please store the following types of content in the appropriate folders:
+\begin{itemize}
+	\item New webpages: root
+	\item Images: /images (and the photos for the 'people' page are in /images/members)
+	\item CSS stylesheets: /styles
+	\item Publications (in PDF): /docs
+	\item Site guide, change log: /about (not for the general public) 
+\end{itemize}
+
+To link to a file within the website, use its address within the file structure rather than its web address. For example, if you want to add an image to the website, use the following syntax:
+
+\begin{lstlisting}
+<img src = "images/YOURIMAGEHERE.jpg" />
+\end{lstlisting}
+
+NOT:
+\begin{lstlisting}
+<img src = "http://sll.stanford.edu/images/YOURIMAGEHERE.jpg" />
+\end{lstlisting}
+
+\subsection{Adding a new page to the website}
+
+\pagebreak
+
+\begin{lstlisting}
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Social Learning Lab @ Stanford</title>
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto+Slab|Roboto:300' rel='stylesheet' type='text/css'>
+<link href="favicon.ico" rel="icon" type="image/ico">
+</head>
+
+<body>
+<div id="wrapper">
+  <header>
+  	<!--Header and navigation bar-->
+    <div id = "labtitle">
+    	<div id = "titlegraphic">
+            <div id = "lablogo">
+            <img src="images/ssll_logo.svg" alt="" width="125"/> </div>
+            <div id = "labname">
+              <h1>Social Learning Lab</h1>
+              <h2>Stanford University</h2>
+            </div>
+        </div>
+    </div>
+  	<nav>
+    	<ul id="mainnav">
+    	  <li id="home"><a href="index.html">Home</a></li>
+    	  <li id="people"><a href="people.html">People</a></li>
+    	  <li id="publications"><a href="publications.html">Publications</a></li>
+    	  <li id="contact"><a href="#">Contact</a>
+         	<ul>
+            	<li><a href="contact.html">General inquiries</a></li>
+                <li><a href="participate.html">Participate</a></li>
+            </ul>
+          </li>
+    	  <li id="news"><a href="news.html">News</a></li>
+    	</ul>
+    </nav>
+  </header>
+  <div id ="main">
+  	<!--Body and footer-->
+    <!--CONTENT STARTS HERE-->
+
+    <!--CONTENT ENDS HERE-->
+ </div> </div> </body> </html>
+\end{lstlisting}
+
+\pagebreak
+
+Copy-paste the code in the previous page into a new HTML file. \textbf{Place all content within the div labeled "main", before the footer!} Make sure to save the page to the root folder of the website.
+
+If your page includes headers, please enclose them in \lstinline{<h3></h3>} tags---\lstinline{<h1>} and \lstinline{<h2>} are being used for the page header.
+
+\subsection{Adding a new entry to the navigation bar}
+\textbf{Note: The instructions below are for adding a drop-down menu item to the navigation bar, not for changing the navigation bar itself.}
+
+At its heart, the navigation bar is just an unordered list that has had fancy formatting applied to it, and the dropdown menu is just another fancy, nested list:
+\begin{lstlisting}
+<ul id="mainnav">
+ 	<li id="home"><a href="index.html">Home</a></li>
+	<li id="people"><a href="people.html">People</a></li>
+	<li id="publications"><a href="publications.html">Publications</a></li>
+	<li id="contact"><a href="#">Contact</a>
+		<ul>
+		<li><a href="contact.html">General inquiries</a></li>
+		<li><a href="participate.html">Participate</a></li>
+		</ul>
+	</li>
+	<li id="news"><a href="news.html">News</a></li>
+</ul>
+\end{lstlisting}
+
+Suppose, sometime in the future, we'll want to add a sub-menu under the 'people' tab. To do so, we'd have to nest an unordered list \textbf{within the 'People' list item}. The list structure would look something like this:
+\begin{lstlisting}
+<ul id="mainnav">
+ 	<li id="home"><a href="index.html">Home</a></li>
+	<li id="people"><a href="#">People</a>
+		<ul>
+		<li><a href="people.html">Current members</a></li>
+		<li><a hre="alumni.html">Lab alumni</a></li>
+		</ul>
+		</li>
+	<li id="publications"><a href="publications.html">Publications</a></li>
+	<li id="contact"><a href="#">Contact</a>
+		<ul>
+		<li><a href="contact.html">General inquiries</a></li>
+		<li><a href="participate.html">Participate</a></li>
+		</ul>
+	</li>
+	<li id="news"><a href="news.html">News</a></li>
+</ul>
+\end{lstlisting}
+
+Note that the nested list is enclosed by the \lstinline|<li id="people"> </li>| tags!
+
+The file \texttt{main.css} includes all the formatting you'll need---so adding an item to the navigation bar should just be a matter of changing the list! You can see what all the submenus would look like in \texttt{test.html}, which is located in the root folder. Keep in mind that I've only prepared the site so that you can add drop-down menus to the current navigation bar items. Changing the navigation bar itself is a much more tedious process.
+
+
+\section{Adding and updating website content}
+
+\subsection{Adding a publication}
+Publications are sorted in reverse chronological order. Each new citation should go in the appropriate section (``Journal Articles'' or ``Refereed Conference Proceedings''), under the heading corresponding to the current year. Enclose each entry in \lstinline|<p class="pub"> </p>| tags to ensure proper formatting.\\
+
+Example:
+\begin{lstlisting}
+<p class="pub">Gweon, H., Pelton, H., Konopka, J.A., &amp; Schulz, L.E. (2014). Sins of omission: Children selectively explore when agents fail to tell the whole truth. <em>Cognition,</em> 132, 335-341. <a href="docs/2014_sinsofomission.pdf">(pdf)</a></p>
+\end{lstlisting}
+A few things to note:
+\begin{itemize}
+	\item The publication is cited using standard APA style.
+	\item The journal name is enclosed in \lstinline|<em> </em>| tags to italicize the text.
+	\item The link to the paper is enclosed in parentheses: (pdf)
+\end{itemize}
+
+\subsection{Adding a lab member}
+Please use the template below to enter new members into the lab’s “people” page. Replace the all-caps text with the appropriate values. Be sure to paste code in the appropriate section of the page—it should not be enclosed in any other "labmember" div, and it should be within the "main" div, before the footer. As we gain more lab members, they should be arranged in descending order of year and, within a year, in ascending alphabetical order (by last name).
+
+\begin{lstlisting}
+<div class="labmember">
+	<div class="memberphoto">
+      <img src="images/members/PHOTOFILE.png" width=150 height=200 alt=""/> </div>
+    <div class="memberbio">
+    <h4>FULL MEMBER NAME</h4>
+    <a href="mailto:SUNETID@stanford.edu">SUNETID [at] stanford.edu</a>
+    <p>MEMBER BIO</p>  
+    </div>
+</div>
+\end{lstlisting}
+
+To update an existing member's photo, simply add the image to the /images/members folder. The image's filename should be: \texttt{SUNETID.png}. If it is any different, you will need to change the link to the photo file.
+
+\subsection{Adding a news item}
+News items are sorted by most recent. If the news item occurred in a new month, include the month and year first (enclosed in \lstinline{<h3></h3>} tags), followed by the news (enclosed in \lstinline{<p></p>} tags). The latest month's heading should fall in line 45 of the code, i.e., immediately after the \lstinline{<div id="main">} tag is opened.
+
+Example:
+\begin{lstlisting}
+	<h3>September 2014</h3>
+        <p>The lab welcomes Sophie, our new graduate student.</p>
+\end{lstlisting}
+
+
+\section{Publishing content to web}
+
+\subsection{Accesing the site directory}
+Regardless of how you access AFS, the basic process in the same. To make any changes to the website, you will have to upload the updated site files to the folder where our site's files live: \texttt{/afs/ir/group/gweonlab/WWW}\\
+
+(Fun fact: the instructions below are useful for publishing your own personal website, too! Instead of navigating to the lab website directory, go to: \texttt{/afs/ir/users/letter1/letter2/SUNETID/WWW}, where \texttt{letter1} and \texttt{letter2} are the first two letters of your SUNet ID, and carry out the same instructions.)
+
+There are many ways to access to access the folder:
+\begin{itemize}
+	\item \textbf{On the web:} Visit \url{http://afs.stanford.edu} and sign in. Change the current directory path by pressing the 'change' button on the top of the screen and entering the lab website directory.
+	\item \textbf{On Fetch, Cyberduck, etc.:} Connect to the AFS server using the following settings:
+		\begin{itemize}
+			\item Protocol: SFTP
+			\item Server: cardinal.stanford.edu
+			\item Username: your SUNet ID
+			\item Password: your SUNet ID password
+			\item Path (under 'More Options' in Cyberduck): \texttt{/afs/ir/group/gweonlab/WWW}
+		\end{itemize}
+\end{itemize}
+
+\subsection{Guidelines for uploading content}
+
+Whenever you update the site,
+\begin{enumerate}
+	\item Make sure the latest version of the site (before your edits) is backed up in the lab Dropbox directory. Different versions of the website are backed up in SLL\_Documents/labsite.
+	\item Write down all changes that you're about to make to the site in about/change\_log.rtf, with your initials.
+	\item If you added any images and documents to the page, make sure to upload them to the /images and /docs folder, respectively.
+	\item If you made any changes to the CSS stylesheet (please don't, unless it's totally necessary---it will change the appearance of every page), upload the latest version of main.css to the /styles folder.
+	\item On the AFS server, replace the old version of the page you uploaded with an updated page \textbf{with the same filename}.
+	\item Test, test, test! Open the page and make sure that everything looks right and that the page links and is linked to properly with other pages in the site. If you changed the stylesheets, check \textbf{every} page to make sure they still look right.
+\end{enumerate}
+
+\end{document}
