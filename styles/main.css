@@ -32,6 +32,7 @@ h2 {
 h3 {
 	padding-top: 0px;
 	font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+    font-size: 24px;
 }
 
 #wrapper {
@@ -44,8 +45,16 @@ h3 {
 #main {
 	margin: 0;
 	margin-top: 20px;
-	padding: 40px 30px 0px 30px;
+	padding: 70px 90px 70px 90px;
 	min-height: 500px;
+}
+
+
+
+#about {
+    position: relative;
+    display:inline-block;
+    margin-right: 420px;
 }
 
 #main a {
@@ -66,6 +75,72 @@ h4 {
 	font-size: medium;
 }
 
+.faq h4 {
+    font-weight: 500;
+    font-size: medium;
+    font-style: italic;
+    color: peru;
+    font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+}
+
+.faq p {
+    margin-top: .4em;
+    margin-left: 3em;
+}
+
+
+
+
+.projectinfo h4 {
+    font-weight: 500;
+    font-size: medium;
+    color: peru;
+    font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+    margin-top: -14.5em;
+    margin-bottom: 10em;
+    
+}
+
+.projectinfo p {
+    margin-top: -9em;
+    margin-left: 0em;
+}
+
+h5 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+
+h6 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: .2em;
+    font-size: medium;
+    font-weight: bold;
+    color: peru;
+    font-family: Roboto Slab, Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+h5 a {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+    font-size: medium;
+    font-weight: lighter;
+    color: black;
+}
+
+
+
 .blockquote {
 	padding-left: 40px;
 }
@@ -76,13 +151,14 @@ Includes:
 
 #labtitle {
 	background-color: #696969;
-	margin: 0px;
-	padding: 50px;
+	margin: 0 auto;
+	padding: 20px;
 	min-height: 125px;
+    margin-bottom: 5px;
 }
 
 #titlegraphic {
-	width: 400px;
+	width: 500px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -128,56 +204,95 @@ Includes:
 
 #mainnav li:hover ul {
 	left: auto;
+    z-index: 2;
 }
 
-#mainnav #home ul li{
-	background-color: #90E0FD;
+#mainnav #research ul li{
+	background-color: #71D0F2;
 }
 
 #mainnav #people ul li{
 	background-color: #FCA9A9;
 }
 
-#mainnav #publications ul li{
-	background-color: #F0CFAB;
+#mainnav #parents ul li{
+	background-color: #BBE77E;
 }
 
 #mainnav #contact ul li{
-	background-color: #FAD382;
+	background-color: #FCC34A;
+    position: relative;
 }
 
-#mainnav #news ul li{
-	background-color: #BBE77E;
+#mainnav #media ul li{
+	background-color: ;
 }
-#home, #people, #publications, #contact {
+#research, #people, #parents, #media {
 	margin-right: 5px;
 }
-#home {
+#research {
 	background-color: #71D0F2;
 }
 #people {
 	background-color: #FB9595;
 }
-#publications {
-	background-color: #E7C299;
+#parents {
+	background-color: #ACDA6B;
 }
 #contact {
 	background-color: #FCC34A;
 }
-#news {
-	background-color: #ACDA6B;
+#media {
+	background-color: #E7C299;
+    border: auto;
 }
 
 /* Body elements */
 
 .center {
-	display: block;
-	margin: 0 auto;
+    margin-left: -39px;
+    margin-top: 30px;
+    position: relative;
 }
+
+.front {
+    margin-left: 120px;
+    position: relative;
+}
+
 
 .labmember {
 	width: 100%;
 	min-height: 225px;
+}
+
+.headline {
+	width: 100%;
+	min-height: 160px;
+}
+
+.headline h3 {
+    padding-top: 0px;
+    font-weight: lighter;  
+    font-size: 16px;
+    margin-top: 27px;
+}
+
+.headline h4 {
+    margin-top: -10px;
+    margin-bottom: .9em;
+    font-size: 16px;
+    font-style: italic;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #696969;
+}
+
+
+
+
+.labalumni li {
+    margin-top: .2em;
+    
 }
 
 .memberphoto {
@@ -185,12 +300,61 @@ Includes:
 	margin-right: 30px;
 }
 
-.labphoto {
-	float: right;
-	margin-left: 30px;
+
+/*media section*/
+.headlinephoto {
+	float: left;
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-top: 10px;;
+}
+
+.headlineinfo {
+	float: left;
+	margin-right: 30px;
+    margin-left: 240px;
+    margin-top: -20px;
+    position: absolute;
 }
 
 
+/*latest news on landing page*/
+.new {
+    position: relative;
+    display:inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: -267px;
+    margin-bottom: 0px;	
+    padding-bottom: -0px;
+    margin-left: 440px;
+}
+
+.newall {
+    display:inline-block;
+    float: right;
+    margin-top: -195px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+    float: right;
+    width: 380px;
+    height: 178px;
+    overflow: scroll;
+    position: static;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: white;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*publications*/
 .pub {
 	padding-left: 2em;
 	text-indent: -2em;
@@ -198,6 +362,26 @@ Includes:
 	padding-bottom: 0px;
 	margin-top: 10px;
 }
+
+
+.project img {
+    margin-left: 0em;
+    max-width: 100%;
+    height: auto; 
+}
+
+.project iframe {
+    margin-left: 0em;
+    max-height:  
+}
+
+.projectinfo {
+    max-width: 100%;
+    margin-left: 27em;
+    margin-bottom: -0em;
+    margin-top: -19em;
+}
+
 
 #map {
 	text-align: center;
@@ -209,6 +393,7 @@ Includes:
 	margin: 0 auto;
 }
 
+
 figcaption {
 	text-align: right;
 	font-size: small;
@@ -216,4 +401,153 @@ figcaption {
 
 img {
     image-orientation: from-image;
+}
+
+/*questions in parents section*/
+button.accordion {
+    background-color: #FB9595;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #FCA9A9;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    padding-top: 12px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    margin: -2px;
+    transition: max-height 0.2s ease-out;
+}
+
+.right {
+    float: left;
+    margin-top: -6px;
+}
+
+/*parents carousel*/
+
+
+
+body {
+    font-family: Helvetica,sans-serif;
+    margin:0
+}
+.mySlides {
+    display:none
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
